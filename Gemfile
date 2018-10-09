@@ -60,9 +60,13 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-# added gem
+# added gems
+
 gem 'clearance'
 
 gem 'bootstrap-sass', '~> 3.3.7'
 
 gem 'jquery-rails'
+
+# Use fontawesome
+gem 'font-awesome-rails'
