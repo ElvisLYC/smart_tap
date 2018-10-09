@@ -11,4 +11,6 @@ Rails.application.routes.draw do
       only: [:create, :edit, :update]
   end
   # get '/show' => "welcome#show"
+
+  get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 end

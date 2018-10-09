@@ -68,3 +68,5 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
 
 gem 'figaro'
+
+gem 'omniauth-google-oauth2'
