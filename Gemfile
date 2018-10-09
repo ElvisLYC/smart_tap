@@ -70,3 +70,7 @@ gem 'jquery-rails'
 
 # Use fontawesome
 gem 'font-awesome-rails'
+
+gem 'figaro'
+
+gem 'omniauth-google-oauth2'
