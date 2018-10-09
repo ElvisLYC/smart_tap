@@ -1,72 +1,29 @@
+<div class="text-field">
+    <%= form.text_field :first_name, type: 'text', class: 'form-control-form', placeholder: 'First Name'  %>
+    <span class="fa fa-user" id="input-font-awesome"></span>
+    <%= form.text_field :last_name, type: 'text', class: 'form-control-form', placeholder: 'Last Name'  %>
+    <span class="fa fa-user" id="input-font-awesome"></span>
 
-<h2>Registration Form</h2>
+    <small id="" class="form-text text-muted">(We'll never share your email with anyone else.)</small>
 
-      <div>
-        <%= form.label :email %>
-        <%= form.text_field :email, type: 'email', class: "form-control" %>
-      </div>
+</div>
 
-      <div>
-        <%= form.label :password %>
-        <%= form.password_field :password, class: "form-control" %>
-      </div>
+<div class="text-field">
+    <%= form.text_field :email, type: 'email', class: 'form-control-form', placeholder: 'Email'%>
+    <span class="fa fa-envelope" id="input-font-awesome"></span>
 
-      <div>
-        <%= form.label :first_name %>
-        <%= form.text_field :first_name, type: 'first_name', class: "form-control" %>
-      </div>
+</div>
 
-        <div>
-          <%= form.label :last_name %>
-          <%= form.text_field :last_name, type: 'last_name', class: "form-control" %>
-        </div>
+<div class="password-field">
+    <%= form.password_field :password, class: 'form-control-form', placeholder: 'Password' %>
+    <span class="fa fa-lock" id="input-font-awesome"></span>
 
-        <div>
-          <%= form.label :gender %>
-          <%= form.text_field :gender, type: 'gender', class: "form-control" %>
-        </div>
+</div>
 
-        <div>
-          <%= form.label :birthdate %>
-          <%= form.text_field :birthdate, type: 'birthdate', class: "form-control" %>
-        </div>
+<div class="submit-field">
+    <%= form.submit :'Sign Up', class: 'btn-lgin', placeholder: 'Login'  %>
+</div>
 
-        <div>
-          <%= form.label :phone_number %>
-          <%= form.text_field :phone_number, type: 'phone_number', class: "form-control" %>
-        </div>
 
-        <div>
-          <%= form.label :address %>
-          <%= form.text_field :address, type: 'address', class: "form-control" %>
-        </div>
 
-        <div>
-          <%= form.label :city %>
-          <%= form.text_field :city, type: 'city', class: "form-control" %>
-        </div>
 
-        <div>
-          <%= form.label :zipcode %>
-          <%= form.text_field :zipcode, type: 'zipcode', class: "form-control" %>
-        </div>
-
-        <div>
-          <%= form.label :state %>
-          <%= form.text_field :state, type: 'state', class: "form-control" %>
-        </div>
-
-        <div>
-          <%= form.label :country %>
-          <%= form.text_field :country, type: 'country', class: "form-control" %>
-        </div>
-        
-        <div>
-          <%= form.file_field :avatar %>
-        </div>
-
-        <%= form.submit class:"btn btn-primary login-popup-btn"%>
-
-        <div>
-          Already have an account? <%= link_to "Sign In", sign_in_path %>
-        </div>
