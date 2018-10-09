@@ -74,3 +74,7 @@ gem 'font-awesome-rails'
 gem 'figaro'
 
 gem 'omniauth-google-oauth2'
+
+gem 'carrierwave', '~> 1.0'
+
+gem "mini_magick"
