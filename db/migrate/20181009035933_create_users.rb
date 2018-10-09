@@ -2,20 +2,20 @@ class CreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
       t.timestamps null: false
-      t.string :first_name, null: false
-      t.string :last_name, null: false
-      t.string :phone_number, null: false
-      t.date :birthdate, null: false
-      t.string :gender, null: false
-      t.string :address, null: false
       t.string :email, null: false
-      t.string :city, null: false
-      t.integer :zipcode, null: false
-      t.integer :state, null: false
-      t.string :country, null: false
+      t.string :first_name
+      t.string :last_name
+      t.string :phone_number
+      t.date :birthdate
+      t.string :gender
+      t.string :address
+      t.string :city
+      t.integer :zipcode
+      t.integer :state
+      t.string :country
       t.string :avatar
-      t.string :role, default: 0
-      t.string :verification, default: false
+      t.integer :role, default: 0
+      t.boolean :verification, default: false
       t.string :appliances
       t.string :play_lists
 
