@@ -5,15 +5,16 @@
   </div>
 </div>
 
-
-
 <div class="button-group-1">
   <button type="button" class="btn btn-primary"><i class="fas fa-camera fa-6x"></i><br>CCTV</button>
   <button type="button" class="btn btn-primary"><i class="far fa-lightbulb fa-6x"></i><br>Control Applicances</button>
   <button type="button" class="btn btn-primary"><i class="far fa-file fa-6x"></i><br>Energy Consumption Report</button>
 </div>
+
 <div class="button-group-2">
-  <button type="button" class="btn btn-success"><i class="fas fa-mobile-alt fa-6x"></i><br>Add New Devices</button>
+  <%= link_to add_device_path(current_user.id), class:"btn btn-success test" do %>
+    <i class="fas fa-mobile-alt fa-6x"></i> <br> Add New Device
+    <% end %>
   <button type="button" class="btn btn-success"><i class="fas fa-lock fa-6x"></i><br>Security Setting</button>
   <button type="button" class="btn btn-success"><i class="fas fa-cog fa-6x"></i><br>Setting</button>
 </div>
