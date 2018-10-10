@@ -1,6 +1,0 @@
-
-<%= bootstrap_form_with scope: :device, url: add_device_path, method: :post, local: true do |f| %>
-    <%= f.select :place_type, options_for_select(Listing.place_type), include_blank: true %><br>
-<%= f.select :guest_number, options_for_select(Listing.guest_number)  %>
-        <%= f.select :bedroom_number, options_for_select(Listing.bedroom_number)  %>
-<% end -%>

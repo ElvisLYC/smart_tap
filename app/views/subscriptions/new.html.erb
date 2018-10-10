@@ -1,0 +1,4 @@
+<%= form_for @subscription, url: new_subscription_path(current_user.id), local: true do |f| %>
+  <%= f.select :purchase_unit, options_for_select(Subscription.purchase_range), include_blank: true %><br>
+  <%= f.submit "Pay Now" %>
+<% end -%>

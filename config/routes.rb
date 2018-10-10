@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   # get '/show' => "welcome#show"
 
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
-  get "/users/:id/add_device" => "devices#device", as: 'add_device'
+  get "/users/:id/add_device" => "devices#new", as: 'devices'
+  get "/users/:id/new_subscription" => "subscriptions#new", as: 'new_subscription'
 
   post '/users/:id' => "users#edit"
 end
