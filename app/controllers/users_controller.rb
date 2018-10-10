@@ -30,9 +30,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def device
-    render '/users/device/add_device'
-  end
 private
   def user_params
     params.require(:user).permit(:email, :password, :first_name, :last_name, :gender, :city, :zipcode, :state, :country, :phone_number, :birthdate, :address, :avatar)

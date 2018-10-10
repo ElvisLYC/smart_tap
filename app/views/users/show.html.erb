@@ -3,9 +3,13 @@
 <div class="container emp-profile">
 	    <div class="row">
 	        <div class="col-md-4">
-	            <div class="profile-img">
-								<%= image_tag(current_user.avatar.url, :alt => "avatar", id:"profile-picture") %>
-	            </div>
+							<% if current_user.avatar.url != nil %>
+		            <div class="profile-img">
+									<%= image_tag(current_user.avatar.url, :alt => "avatar", id:"profile-picture") %>
+		            </div>
+							<% else %>
+								<img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" alt="no image available">
+							<% end %>
 	        </div>
 	        <div class="col-md-6">
             <div class="profile-head">
