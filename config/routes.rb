@@ -17,4 +17,8 @@ Rails.application.routes.draw do
   get "/users/:id/new_subscription" => "subscriptions#new", as: 'new_subscription'
 
   post '/users/:id' => "users#edit"
+
+  post 'subscription/checkout'
+
+
 end
