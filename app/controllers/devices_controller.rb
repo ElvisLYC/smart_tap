@@ -1,7 +1,12 @@
 class DevicesController < ApplicationController
 
-  def device
-    render 'device/add_device'
+  def new
+    render 'devices/new'
+    @device = Device.new
   end
-  
+
+  def add_device
+
+  end
+
 end

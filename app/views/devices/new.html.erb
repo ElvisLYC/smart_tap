@@ -1,0 +1,6 @@
+<!-- come back -->
+<%= form_for Device.new do |f| %>
+  <%= f.select :pla, options_for_select(Listing.place_type), include_blank: true %><br>
+  <%= f.select :guest_number, options_for_select(Listing.guest_number)  %>
+  <%= f.select :bedroom_number, options_for_select(Listing.bedroom_number)  %>
+<% end -%>
