@@ -19,10 +19,15 @@ Rails.application.routes.draw do
 
   post '/users/:id' => "users#edit"
 
+
   post 'subscriptions/checkout'
 
   # post "/users/:id/new_subscription" => "subscriptions#checkout"
 
   patch '/users/:id/new_subscription' => "subscriptions#checkout"
+
+  # Cross Origin problem
+  match '*all', controller: 'application', action: 'cors_preflight_check', via: [:options]
+
 
 end
