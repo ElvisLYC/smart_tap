@@ -17,4 +17,8 @@ Rails.application.routes.draw do
   get "/users/:id/new_subscription" => "subscriptions#new", as: 'new_subscription'
 
   post '/users/:id' => "users#edit"
+
+  # Cross Origin problem
+  match '*all', controller: 'application', action: 'cors_preflight_check', via: [:options]
+
 end
