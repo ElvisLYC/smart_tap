@@ -24,10 +24,40 @@
 @import "navbar.scss";
 @import "font-awesome";
 
-body{
-	padding-top: 90px;
-}
+// body{
+// 	padding-top: 90px;
+// }
+//
+// h1{
+// 	color: purple;
+// }
+html,
+	 body,
+	 header,
+	 .view {
+		 height: 100%;
+	 }
 
-h1{
-	color: purple;
-}
+	 @media (max-width: 740px) {
+		 html,
+		 body,
+		 header,
+		 .view {
+			 height: 1050px;
+		 }
+	 }
+
+	 @media (min-width: 800px) and (max-width: 850px) {
+		 html,
+		 body,
+		 header,
+		 .view {
+			 height: 700px;
+		 }
+	 }
+
+	 @media (min-width: 800px) and (max-width: 850px) {
+						 .navbar:not(.top-nav-collapse) {
+								 background: #1C2331!important;
+						 }
+				 }
