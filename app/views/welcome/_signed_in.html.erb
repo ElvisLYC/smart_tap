@@ -25,7 +25,15 @@
 <script type="text/javascript">
   let lightState = 0
   let url = ""
+
   $(document).ready (function(){
+    window.setInterval(function(){
+    /// call your function here
+      state();
+    }, 3000);
+  })
+
+  function state(){
     fetch('http://192.168.1.215/', {
     // fetch('https://8fdf0043.ngrok.io/18/on', {
       // headers: {'Access-Control-Allow-Origin': 'http://192.168.1.215' }
@@ -40,7 +48,7 @@
       document.querySelector('#img-light').src = '/assets/power-btn-off.png';
     }
     })
-  })
+  }
 
   let btnToggle = document.querySelector('#toggle-light')
   // btnToggle.onclick = function(e){
