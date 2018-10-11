@@ -12,6 +12,8 @@ class SessionsController < Clearance::SessionsController
     # else: user logs in with OAuth for the first time
     else
       user = User.create_with_auth_and_hash(authentication, auth_hash)
+
+      UserMailer.welcome_email(user).deliver_now
       # you are expected to have a path that leads to a page for editing user details
       @next = root_path
       @notice = "User created. Please confirm or edit details"
