@@ -49,7 +49,7 @@ You choose to subscribe 3 unit
 <script>
       var form = document.querySelector('#cardForm');
       var submit = document.querySelector("#submit-payment-btn");
-      
+
 
       braintree.client.create({
         authorization: '<%= @client_token %>'
@@ -121,4 +121,3 @@ You choose to subscribe 3 unit
         });
       });
     </script>
-
