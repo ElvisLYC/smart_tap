@@ -16,3 +16,10 @@
 
 
 //= require jquery
+
+
+function myFunction() {
+  let current_selection = document.getElementById("subscription_purchase_unit")
+  let total_price = current_selection.value * 1000
+  document.getElementById("total_sum").innerHTML = "Total Price is RM" + total_price;
+}

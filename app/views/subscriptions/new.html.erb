@@ -1,4 +1,36 @@
+<!-- include js -->
+<%= javascript_include_tag 'subscriptions', 'data-turbolinks-track': 'reload' %>
+
 <%= form_for @subscription, url: new_subscription_path(current_user.id), local: true do |f| %>
-  <%= f.select :purchase_unit, options_for_select(Subscription.purchase_range), include_blank: true %><br>
+  <h3>SmartTap's Home Monitoring Device</h3>
+  <p>Please play your order</p>
+  <table style="width:50%">
+  <tr>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>Price per device</td>
+    <td>RM1,000</td>
+  </tr>
+  <tr>
+    <td>Warranty</td>
+    <td>12 months</td>
+  </tr>
+  <tr>
+    <td>Specification</td>
+    <td>
+      <ul>
+        <li>plug and play easy installation</li>
+        <li>light weight</li>
+        <li>wifi connectivity</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+  <p>Quantity: <span onchange= "myFunction()"><%= f.select :purchase_unit, options_for_select(Subscription.purchase_range), include_blank: true %></span> </p>
+  <p id="total_sum"></p>
   <%= f.submit "Pay Now" %>
 <% end -%>
