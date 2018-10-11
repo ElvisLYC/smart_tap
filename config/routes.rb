@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
-  resources :subscriptions, only: [:index, :create]
+  resources :subscriptions, only: [:index]
 
+  get '/users/:id/checkout' => "subscriptions#show", as: 'pay_subs'
   resources :users, controller: "users", only: [:create, :show, :update, :edit] do
     resource :password,
       controller: "clearance/passwords",
@@ -20,11 +21,17 @@ Rails.application.routes.draw do
   post '/users/:id' => "users#edit"
 
 
+  get 'subscriptions/checkout'
   post 'subscriptions/checkout'
 
   # post "/users/:id/new_subscription" => "subscriptions#checkout"
 
-  patch '/users/:id/new_subscription' => "subscriptions#checkout"
+  post '/users/:id/new_subscription' => "subscriptions#create", as: 'create_subs'
+
+  # get '/users/:id/checkout' => "subscriptions#show"
+
+
+  # get '/users/:id' => "subscriptions#show"
 
   # Cross Origin problem
   match '*all', controller: 'application', action: 'cors_preflight_check', via: [:options]
