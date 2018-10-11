@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   post '/users/:id' => "users#edit"
 
-  post 'subscription/checkout'
+  post 'subscriptions/checkout'
 
 
 end
