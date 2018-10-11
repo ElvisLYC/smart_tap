@@ -1,4 +1,4 @@
-<<<<<<< 75d687781354a60cc38e79857e85784b63a5e9bb
+
 <!-- include js -->
 <%= javascript_include_tag 'subscriptions', 'data-turbolinks-track': 'reload' %>
 
@@ -33,9 +33,9 @@
 
   <p>Quantity: <span onchange= "myFunction()"><%= f.select :purchase_unit, options_for_select(Subscription.purchase_range), include_blank: true %></span> </p>
   <p id="total_sum"></p>
-  <%= f.submit "Pay Now" %>
+  
 <% end -%>
-=======
+
 <%= stylesheet_link_tag 'subscriptions' %>
 <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -56,7 +56,7 @@
 
             <%= form_for :checkout_form, url: subscriptions_checkout_path, html: { id: "cardForm"} do |form| %> 
 
-            	<%= form.select :units, options_for_select([['1 Year @ 199', 199.00],[]]) %>
+            	<!-- form.select :units, options_for_select([['1 Year @ 199', 199.00],[]]) -->
 
               <%= form.label :card_number, "Credit Card Number", html: {class: "hosted-fields--label"} %>
               <div id="card-number" class="hosted-field"></div>
@@ -158,4 +158,4 @@
         });
       });
     </script>
->>>>>>> Added working BrainTree
+    

@@ -2,10 +2,24 @@ class SubscriptionsController < ApplicationController
 
 
 	def new
-		@subscription = Subscription.new
-		@price = 1000
+		# @subscription = Subscription.all
+		@subscription = Subscription.find(params[:id])
 		@client_token = Braintree::ClientToken.generate
 		# render 'subscriptions/new'
+	end
+
+	def create
+		@subscription = Subscription.new
+		@subscription.user_id = current_user.id
+		if @subscription.save
+			@price = 1000
+			@quantity = @subscription.purchase_unit
+			@total = @price*@quantity
+
+			@subscription.update(price: @total)
+			redirect_to root_path
+		end
+		
 	end
 
 
@@ -16,7 +30,7 @@ class SubscriptionsController < ApplicationController
 	  nonce_from_the_client = params[:checkout_form][:payment_method_nonce]
 
 	  result = Braintree::Transaction.sale(
-	   :amount => "1000.00", #this is currently hardcoded
+	   :amount => "100.00", #this is currently hardcoded
 	   :payment_method_nonce => nonce_from_the_client,
 	   :options => {
 	      :submit_for_settlement => true
@@ -30,3 +44,4 @@ class SubscriptionsController < ApplicationController
 	end
 
 end
+

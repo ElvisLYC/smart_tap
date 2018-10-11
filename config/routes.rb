@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
+  resources :subscriptions, only: [:index, :create]
 
   resources :users, controller: "users", only: [:create, :show, :update, :edit] do
     resource :password,
@@ -20,5 +21,8 @@ Rails.application.routes.draw do
 
   post 'subscriptions/checkout'
 
+  # post "/users/:id/new_subscription" => "subscriptions#checkout"
+
+  patch '/users/:id/new_subscription' => "subscriptions#checkout"
 
 end
