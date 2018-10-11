@@ -7,7 +7,10 @@
 
 <div class="button-group-1">
   <button type="button" class="btn btn-primary"><i class="fas fa-camera fa-6x"></i><br>CCTV</button>
-  <button type="button" class="btn btn-primary"><i class="far fa-lightbulb fa-6x"></i><br>Control Applicances</button>
+  <!-- <button type="button" class="btn btn-primary"><i class="far fa-lightbulb fa-6x"></i><br>Control Applicances</button>   -->
+
+  <img src="/assets/power-btn-grey.png" id="img-light" alt="light" onclick="toggleLight(this)" width="150px">Light
+  
   <button type="button" class="btn btn-primary"><i class="far fa-file fa-6x"></i><br>Energy Consumption Report</button>
 </div>
 
@@ -19,10 +22,46 @@
   <button type="button" class="btn btn-success"><i class="fas fa-cog fa-6x"></i><br>Setting</button>
 </div>
 
-<a href="192.168.1.215/18/on">Turn Light on</a>
-<a href="192.168.1.215/18/off">Turn light off</a>
+<script type="text/javascript">
+  let lightState = 0
+  let url = ""
+  $(document).ready (function(){
+    fetch('http://192.168.1.215/', {
+    // fetch('https://8fdf0043.ngrok.io/18/on', {
+      // headers: {'Access-Control-Allow-Origin': 'http://192.168.1.215' }
+    }).then(function(response){
+      return response.json()
+    }).then(function(data){
+      console.log(data)
+      lightState = data;
+      if (lightState == 1){
+      document.querySelector('#img-light').src = '/assets/power-btn-on.png';
+    }else if (lightState == 0){
+      document.querySelector('#img-light').src = '/assets/power-btn-off.png';
+    }
+    })
+  })
 
-<br>
-Click <a href="//192.168.1.215/18/on">on</a> to go to yahoo.
-<br>
-Click <a href="//192.168.1.215/18/off">off</a> to go to yahoo.
+  let btnToggle = document.querySelector('#toggle-light')
+  // btnToggle.onclick = function(e){
+  function toggleLight(e){
+    if (lightState == 1){
+      url = "http://192.168.1.215/18/off"
+      lightState = 0
+      document.querySelector('#img-light').src = '/assets/power-btn-off.png';
+    }else if (lightState == 0){
+      url = "http://192.168.1.215/18/on"
+      lightState = 1
+      document.querySelector('#img-light').src = '/assets/power-btn-on.png';
+    }
+    // e.preventDefault()
+    fetch(url, {
+    // fetch('https://8fdf0043.ngrok.io/18/on', {
+      // headers: {'Access-Control-Allow-Origin': 'http://192.168.1.215' }
+    }).then(function(response){
+      return response.json()
+    }).then(function(data){
+      console.log(data)
+    })
+  }
+</script>
