@@ -79,6 +79,11 @@ gem 'carrierwave', '~> 1.0'
 
 gem "mini_magick"
 
+
+
+gem 'braintree'
+
+
 gem 'sidekiq'
 
 gem 'rack-cors'
