@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      byebug
+      UserMailer.welcome_email(@user).deliver_now
       sign_in @user
       redirect_back_or sign_in_path
     else
