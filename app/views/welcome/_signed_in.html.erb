@@ -25,13 +25,19 @@
 <script type="text/javascript">
   let lightState = 0
   let url = ""
+  let time = setInterval(myTimer, 3000);
 
-  $(document).ready (function(){
-    window.setInterval(function(){
-    /// call your function here
+  function myTimer() {
       state();
-    }, 3000);
-  })
+      console.log(window.location.href)
+      if (window.location.href != "http://localhost:3000/"){
+        myStopFunction()
+      }
+  
+}
+  function myStopFunction() {
+      clearInterval(time);
+  }
 
   function state(){
     fetch('http://192.168.1.215/', {
