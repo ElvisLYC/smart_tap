@@ -9,5 +9,7 @@ class Subscription < ApplicationRecord
   	@price = '1000'
   end
 
-
+	def paid
+		self.update(payment_verification: true)
+	end
 end

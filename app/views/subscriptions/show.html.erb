@@ -1,4 +1,6 @@
-You choose to subscribe 3 unit
+<h5>Kindly proceed to make payment as per details below:-</h5>
+<h5>Purchase Unit: <%= @subscription.purchase_unit %> units </h5>
+<h5>Total Due: RM<%= @total_cost %> </h5>
 <%= stylesheet_link_tag 'subscriptions' %>
 <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -17,7 +19,7 @@ You choose to subscribe 3 unit
           </div>
           <div class="demo-frame">
 
-            <%= form_for :checkout_form, url: subscriptions_checkout_path, html: { id: "cardForm"} do |form| %> 
+            <%= form_for :checkout_form, url: subscriptions_checkout_path, html: { id: "cardForm"} do |form| %>
 
             	<!-- form.select :units, options_for_select([['1 Year @ 199', 199.00],[]]) -->
 
