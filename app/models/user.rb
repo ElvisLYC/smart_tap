@@ -19,4 +19,14 @@ class User < ApplicationRecord
     x = self.authentications.find_by(provider: 'google_oauth2')
     return x.token unless x.nil?
   end
+
+# facebook authentication
+  def fb_token
+    x = self.authentications.where(:provider => :facebook).first
+    return x.token unless x.nil?
+  end
+
+  def password_optional?
+    true
+  end
 end

@@ -87,3 +87,6 @@ gem 'braintree'
 gem 'sidekiq'
 
 gem 'rack-cors'
+
+gem 'omniauth'
+gem 'omniauth-facebook'
