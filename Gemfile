@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'mdbootstrap-rails'
 gem 'rails', '~> 5.2.1'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -81,6 +82,7 @@ gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 
 
+<<<<<<< HEAD
 
 gem 'braintree'
 
@@ -88,3 +90,6 @@ gem 'braintree'
 gem 'sidekiq'
 
 gem 'rack-cors'
+=======
+gem 'toastr-rails'
+>>>>>>> install gem
