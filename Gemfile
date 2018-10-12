@@ -82,7 +82,6 @@ gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 
 
-<<<<<<< HEAD
 
 gem 'braintree'
 
@@ -90,6 +89,5 @@ gem 'braintree'
 gem 'sidekiq'
 
 gem 'rack-cors'
-=======
+
 gem 'toastr-rails'
->>>>>>> install gem
