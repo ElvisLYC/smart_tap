@@ -25,10 +25,12 @@ class SubscriptionsController < ApplicationController
 	def show
 		@client_token = Braintree::ClientToken.generate
 		@subscription = Subscription.find(session["subs_id"])
-
+		@total_cost = @subscription.price.to_i * @subscription.purchase_unit
 	end
 
 	def checkout
+		@subscription = Subscription.find(session["subs_id"])
+
 	  nonce_from_the_client = params[:checkout_form][:payment_method_nonce]
 		@unit_price= Subscription.find(session["subs_id"]).price.to_i
 		@quantity = Subscription.find(session["subs_id"]).purchase_unit
@@ -42,6 +44,8 @@ class SubscriptionsController < ApplicationController
 	    }
 	   )
 	  if result.success?
+			@subscription.paid
+			PaymentJob.perform_later(@total_cost, current_user)
 	    redirect_to :root, :flash => { :success => "Transaction successful!" }
 	  else
 	    redirect_to :root, :flash => { :error => "Transaction failed. Please try again." }
