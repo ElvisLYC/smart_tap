@@ -91,3 +91,5 @@ gem 'rack-cors'
 gem 'whenever', require: false
 
 gem 'net-ssh'
+gem 'omniauth'
+gem 'omniauth-facebook'
