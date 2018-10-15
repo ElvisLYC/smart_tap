@@ -1,6 +1,7 @@
 class Task < ApplicationRecord
   after_save :update_crontab
   after_initialize :end_time
+  validates :name, presence: true
 
 	def turn_on
 		puts "model, light on"
@@ -11,6 +12,11 @@ class Task < ApplicationRecord
     time_start = start_time ? start_time.strftime("%H:%M:%S") : "nil"
     time_end = end_time ? end_time.strftime("%H:%M:%S") : "nil"
     {end_time: time_end, start_time: time_start}
+  end
+
+  def get_device_id
+    x = Device.find_by(name: self.name).id
+    self.update(device_id: x)
   end
 
   private
