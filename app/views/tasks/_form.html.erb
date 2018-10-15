@@ -1,0 +1,54 @@
+<div id="task-form" class="container">
+  <div class="panel">
+    <%= form_for(:task, :url => user_tasks_path, :method => :post) do |f| %>
+      <div class="row">
+        <div class="field">
+          <div class="inputs device col-4">
+            <label for="">Device</label><br>
+            <select>
+              <option>Light</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <div class="inputs action col-4">
+            <label for="">Action</label><br>
+            <%= f.select :description, options_for_select(["Turn on", "Turn off"]), :class => '' %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Start date:</label>
+          <div class="control">
+            <%= date_field_tag 'start_date', nil, :class => 'select task-input' %>
+          </div>
+        </div>
+        <div class="inputs time col-3">
+          <label for="">Time</label><br>
+          <%= time_field_tag 'start_time', nil, :class => 'select task-input' %>
+        </div>
+        <div>
+          <label>End date:</label>
+          <div class="control">
+           <%= date_field_tag 'end_date', nil, :class => 'select task-input' %>
+          </div>
+        </div>
+        <div class="inputs time col-3">
+          <label for="">Time</label><br>
+          <%= time_field_tag 'end_time', nil, :class => 'select task-input' %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div id="task-dates-error-notice"><%= flash[:task_error] %></div>
+        <br>
+        <div class="control">
+          <%= f.submit "Add Task", :class => 'button' %>
+        </div>
+        <p class="form-footer"> (You can edit or delete the task later)</p>
+      </div>
+    <% end %>
+  </div>
+</div>
