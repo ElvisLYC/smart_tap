@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   # Schedule a new Task
   resources :users, controller: "users", only: [:create, :show, :update, :edit] do
     resources :tasks
+    resources :devices
   end
   post '/users/:id/task/new' => "tasks#create", as: 'create_task'
   delete '/users/:id/task/:id/delete' => "tasks#destroy", as: 'destroy_task'

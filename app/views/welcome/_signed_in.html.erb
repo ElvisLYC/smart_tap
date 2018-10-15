@@ -6,13 +6,18 @@
 </div>
 
 <div class="button-group-1">
-  <button type="button" class="btn btn-primary"><i class="fas fa-camera fa-6x"></i><br>CCTV</button>
+
+  <div class="button-group-2">
+    <%= link_to user_devices_path(current_user.id), class:"btn btn-primary" do %>
+      <br><i class="fas fa-book fa-2x"></i><br> Your Devices
+    <% end %>
+  </div>
   <!-- <button type="button" class="btn btn-primary"><i class="far fa-lightbulb fa-6x"></i><br>Control Applicances</button>   -->
 
   <img src="/assets/power-btn-grey.png" id="img-light" alt="light" onclick="toggleLight(this)" width="150px">Light
   <br>
   <!-- <img src="/assets/power-btn-grey.png" id="img-light" alt="light" onclick="schedule(this)" width="150px">Light -->
-  
+
   <button type="button" class="btn btn-primary"><i class="far fa-file fa-6x"></i><br>Energy Consumption Report</button>
 
   <div class="button-group-2">
@@ -43,9 +48,9 @@
       if (window.location.href != "http://localhost:3000/"){
         myStopFunction()
       }
-  
+
   }
-  
+
   function myStopFunction() {
       clearInterval(time);
   }

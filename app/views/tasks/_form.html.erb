@@ -5,9 +5,10 @@
         <div class="field">
           <div class="inputs device col-4">
             <label for="">Device</label><br>
-            <select>
-              <option>Light</option>
-              <option>Other</option>
+            <select name="task[name]">
+              <% @devices.each do |t| %>
+                <option name="task[name]"><%= t.name %></option>
+              <% end %>
             </select>
           </div>
         </div>

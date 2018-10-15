@@ -3,7 +3,8 @@ class TasksController < ApplicationController
   # before_action :set_task
 
   def index
-  	@tasks = Task.all
+  	# @tasks = Task.all
+		@devices = Device.all
   end
 
   def show
@@ -16,6 +17,7 @@ class TasksController < ApplicationController
     @task.device_id = params[:device_id]
 
     if @task.save
+			@task.get_device_id
       redirect_to user_tasks_path
     else
       redirect_back(fallback_location: root_url)
@@ -58,6 +60,6 @@ class TasksController < ApplicationController
 
 
   def task_params
-    params.require(:task).permit(:device_id, :user_id, :description, :start_date, :start_time, :end_date, :end_time)
+    params.require(:task).permit(:device_id, :user_id, :description, :start_date, :start_time, :end_date, :end_time, :name)
   end
 end
