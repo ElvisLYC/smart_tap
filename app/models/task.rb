@@ -7,7 +7,7 @@ class Task < ApplicationRecord
 	end
 
   def get_time
-    min_start = min_start ? start_time.strftime("%M") : "nil"
+    # min_start = min_start ? start_time.strftime("%M") : "nil"
     time_start = start_time ? start_time.strftime("%H:%M:%S") : "nil"
     time_end = end_time ? end_time.strftime("%H:%M:%S") : "nil"
     {end_time: time_end, start_time: time_start}

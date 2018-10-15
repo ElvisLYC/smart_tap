@@ -29,22 +29,25 @@ class TasksController < ApplicationController
 
   def edit
   	@task = Task.find(params[:id])
+		@task.user_id = current_user.id
+		@task.device_id = params[:device_id]
     render template: "tasks/edit"
   end
 
   def update
   	@task = Task.find(params[:id])
     if @task.update(task_params)
-      redirect_to task_path
+      redirect_to user_tasks_path(current_user.id)
     else
       render '/tasks/new'
     end
   end
 
   def destroy
+		@task = Task.find(params[:id])
     @task.destroy
     respond_to do |format|
-      format.html { redirect_to new_task_url, notice: 'The Task was successfully deleted.' }
+      format.html { redirect_to user_tasks_path(current_user.id), notice: 'The Task was successfully deleted.' }
       format.json { head :no_content }
     end
   end

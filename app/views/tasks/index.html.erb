@@ -26,8 +26,8 @@
         <td><%= t.end_date %></td>
         <td><%= t.get_time[:end_time] %></td>
         <td><%= t.status %></td>
-        <td><%= link_to 'Edit', user_tasks_path(t) %></td>
-        <td><%= link_to 'Delete', user_tasks_path(t), method: :destroy, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_task_path(t) %></td>
+        <td><%= link_to 'Delete', destroy_task_path(t), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
