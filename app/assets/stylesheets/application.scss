@@ -9,7 +9,9 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+
+ *= require_self
+ *= require_tree .
  */
 
 /*@import "bootstrap-sprockets";*/
@@ -23,6 +25,7 @@
 @import "mdb";
 @import "navbar.scss";
 @import "font-awesome";
+
 
 // body{
 // 	padding-top: 90px;
@@ -267,6 +270,11 @@ a {
 
 .avatar-large {
   width: 68px;
+
+
+body{
+	padding-top: 90px;
+
 }
 
 .avatar-full {

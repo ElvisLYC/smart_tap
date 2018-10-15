@@ -29,6 +29,14 @@ Rails.application.routes.draw do
 
   post '/users/:id/new_subscription' => "subscriptions#create", as: 'create_subs'
 
+  # Schedule a new Task
+  resources :users, controller: "users", only: [:create, :show, :update, :edit] do
+    resources :tasks
+  end
+  post '/users/:id/tasks/new' => "tasks#create"
+  # post '/users/:id/new_task' => "tasks#create"
+  # get '/task', to: 'ssh_commands#ssh_send', as: 'task'
+
   # get '/users/:id/checkout' => "subscriptions#show"
 
 

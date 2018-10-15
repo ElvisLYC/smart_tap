@@ -90,4 +90,12 @@ gem 'sidekiq'
 
 gem 'rack-cors'
 
+
 gem 'toastr-rails'
+
+gem 'whenever', require: false
+
+gem 'net-ssh'
+gem 'omniauth'
+gem 'omniauth-facebook'
+

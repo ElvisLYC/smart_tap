@@ -56,7 +56,7 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
-    braintree (2.90.0)
+    braintree (2.91.0)
       builder (>= 2.0.0)
     builder (3.2.3)
     byebug (10.0.2)
@@ -76,6 +76,7 @@ GEM
     chromedriver-helper (2.1.0)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
+    chronic (0.10.2)
     clearance (1.16.1)
       bcrypt
       email_validator (~> 1.4)
@@ -142,6 +143,7 @@ GEM
     multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
+    net-ssh (5.0.2)
     nio4r (2.3.1)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
@@ -154,6 +156,8 @@ GEM
     omniauth (1.8.1)
       hashie (>= 3.4.6, < 3.6.0)
       rack (>= 1.6.2, < 3)
+    omniauth-facebook (5.0.0)
+      omniauth-oauth2 (~> 1.2)
     omniauth-google-oauth2 (0.5.3)
       jwt (>= 1.5)
       omniauth (>= 1.1.1)
@@ -251,6 +255,8 @@ GEM
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
+    whenever (0.10.0)
+      chronic (>= 0.6.3)
     xpath (3.1.0)
       nokogiri (~> 1.8)
 
@@ -274,6 +280,9 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   mdbootstrap-rails
   mini_magick
+  net-ssh
+  omniauth
+  omniauth-facebook
   omniauth-google-oauth2
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
@@ -289,6 +298,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  whenever
 
 BUNDLED WITH
    1.16.4
