@@ -17,8 +17,13 @@ class TasksController < ApplicationController
     @task.device_id = params[:device_id]
 
     if @task.save
+
 			@task.get_device_id
       redirect_to user_tasks_path
+
+    	SshCommand.ssh_new
+    	redirect_to user_tasks_path
+
     else
       redirect_back(fallback_location: root_url)
     end
