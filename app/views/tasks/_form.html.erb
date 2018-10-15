@@ -22,22 +22,22 @@
         <div class="field">
           <label>Start date:</label>
           <div class="control">
-            <%= date_field_tag 'start_date', nil, :class => 'select task-input' %>
+            <%= date_field_tag 'task[start_date]', nil, :class => 'select task-input' %>
           </div>
         </div>
         <div class="inputs time col-3">
           <label for="">Time</label><br>
-          <%= time_field_tag 'start_time', nil, :class => 'select task-input' %>
+          <%= time_field_tag 'task[start_time]', nil, :class => 'select task-input' %>
         </div>
         <div>
           <label>End date:</label>
           <div class="control">
-           <%= date_field_tag 'end_date', nil, :class => 'select task-input' %>
+           <%= date_field_tag 'task[end_date]', nil, :class => 'select task-input' %>
           </div>
         </div>
         <div class="inputs time col-3">
           <label for="">Time</label><br>
-          <%= time_field_tag 'end_time', nil, :class => 'select task-input' %>
+          <%= time_field_tag 'task[end_time]', nil, :class => 'select task-input' %>
         </div>
       </div>
       <br>

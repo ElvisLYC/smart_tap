@@ -16,7 +16,7 @@ class TasksController < ApplicationController
     @task.device_id = params[:device_id]
 
     if @task.save
-      redirect_to tasks_path
+      redirect_to user_tasks_path
     else
       redirect_back(fallback_location: root_url)
     end
