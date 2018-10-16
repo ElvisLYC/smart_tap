@@ -16,7 +16,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( welcome.css )
 Rails.application.config.assets.precompile += %w( users.css )
 
-Rails.application.config.assets.precompile += %w( subscriptions.js )
+# Rails.application.config.assets.precompile += %w( subscriptions.js )
 
 Rails.application.config.assets.precompile += %w( subscriptions.css )
 
+Rails.application.config.assets.precompile += %w( *.js )
