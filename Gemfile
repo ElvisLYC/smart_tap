@@ -87,3 +87,5 @@ gem 'braintree'
 gem 'sidekiq'
 
 gem 'rack-cors'
+
+gem 'fusioncharts-rails'
