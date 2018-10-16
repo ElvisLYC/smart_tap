@@ -25,7 +25,7 @@
         <td><%= t.get_time[:start_time] %></td>
         <td><%= t.end_date %></td>
         <td><%= t.get_time[:end_time] %></td>
-        <td><%= t.status %></td>
+        <td id="status"><%= t.status %></td>
         <td><%= link_to 'Edit', edit_task_path(t) %></td>
         <td><%= link_to 'Delete', destroy_task_path(t), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -36,3 +36,25 @@
 <br>
 
 <%= link_to 'New Task', new_user_task_path %>
+
+<script type="text/javascript">
+
+  function checkTime(){
+    <% @tasks.each do |t| %>
+      <% if t.status == 'Pending' %>
+        <% if (Time.now.strftime("%d:%m") == t.start_date.strftime("%d:%m")) %>
+          <% if (Time.now.strftime("%H:%M") == t.start_time.strftime("%H:%M")) %>
+            console.log('completed');
+            <% t.update(:status => 'Completed') %>
+          <% end %>
+        <% end %>
+      <% else %>
+      <% end %>
+    <% end %>
+    // t = setTimeout(function() {
+    //     checkTime()
+    // }, 10000);
+  }
+  checkTime();
+
+</script>

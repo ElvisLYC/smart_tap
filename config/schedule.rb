@@ -20,26 +20,26 @@
 # Learn more: http://github.com/javan/whenever
 
 #!/usr/bin/env ruby 
-require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
-env :PATH, ENV['PATH']
-ENV['RAILS_ENV'] = "development"
-set :job_template, nil
+# require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+# env :PATH, ENV['PATH']
+# ENV['RAILS_ENV'] = "development"
+# set :job_template, nil
 
-set :environment, "development"
-set :output, {:error => "log/whenever.log", :standard => "log/whenever.log"}
+# set :environment, "development"
+# set :output, {:error => "log/whenever.log", :standard => "log/whenever.log"}
 
 
-every 1.day, at: '13:26 am' do
-every 2.minute do
-	runner "CronTask.turn_on"
-	rake "schedule:turn_on" 
-	command "echo 'running task'"
-end
+# every 1.day, at: '13:26 am' do
+# every 2.minute do
+# 	runner "CronTask.turn_on"
+# 	rake "schedule:turn_on" 
+# 	command "echo 'running task'"
+# end
 
-every 1.minute do
-	rake "turn_off" 
-end
+# every 1.minute do
+# 	rake "turn_off" 
+# end
 
-every 1.minutes do
-  command "cd :path && :environment_variable=:environment bundle exec whenever --update-crontab :output"
-end
+# every 1.minutes do
+#   command "cd :path && :environment_variable=:environment bundle exec whenever --update-crontab :output"
+# end
