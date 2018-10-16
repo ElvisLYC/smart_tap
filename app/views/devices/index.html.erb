@@ -32,16 +32,20 @@
 <table class="table table-list-search table-striped table-bordered" id="myTable">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Device</th>
-      <th>Subscription ID</th>
+      <th>Setting</th>
     </tr>
   </thead>
 
   <tbody>
     <% @devices.each do |t| %>
       <tr>
+        <td><%= t.id %></td>
         <td><%= t.name %></td>
-        <td><%= t.subscription_id %></td>
+        <td>
+          <%= link_to 'Add Task', user_tasks_path %>
+        </td>
       </tr>
     <% end %>
   </tbody>

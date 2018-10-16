@@ -4,7 +4,7 @@ class Subscription < ApplicationRecord
 	before_create :set_balance_unit
 
 	def self.purchase_range
-    (1..50)
+    (0..1)
   end
 
 	def set_balance_unit

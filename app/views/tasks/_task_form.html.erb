@@ -5,13 +5,21 @@
         <div class="field">
           <div class="inputs device col-4">
             <label for="">Device</label><br>
-            <select name="task[name]">
+            <!-- <select name="task[device_id]"> -->
               <% @devices.each do |t| %>
-                <option name="task[name]"><%= t.name %></option>
+                <%= f.select :device_id, options_for_select([t.name, "device 2"]), :class => '' %>
               <% end %>
-            </select>
+            <!-- </select> -->
           </div>
         </div>
+
+        <div class="field">
+          <div class="inputs action col-4">
+            <label for="">Action</label><br>
+            <%= f.select :device_id, options_for_select(["Turn on", "Turn off"]), :class => '' %>
+          </div>
+        </div>
+
         <div class="field">
           <div class="inputs action col-4">
             <label for="">Action</label><br>

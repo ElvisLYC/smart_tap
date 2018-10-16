@@ -13,15 +13,14 @@ class TasksController < ApplicationController
   end
 
   def create
+
     @task = Task.new(task_params)
     @task.user_id = current_user.id
-    @task.device_id = params[:device_id]
     @task.status = 'Pending'
 
     if @task.save
     	SshCommand.ssh_new(@task.id)
-			@task.get_device_id
-    	SshCommand.ssh_new
+    	# SshCommand.ssh_new
     	redirect_to user_tasks_path
 
     else
@@ -68,6 +67,6 @@ class TasksController < ApplicationController
 
 
   def task_params
-    params.require(:task).permit(:device_id, :user_id, :description, :start_date, :start_time, :end_date, :end_time, :name)
+    params.require(:task).permit(:device_id, :user_id, :description, :start_date, :start_time, :end_date, :end_time)
   end
 end
