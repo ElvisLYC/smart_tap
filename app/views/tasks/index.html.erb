@@ -47,6 +47,15 @@
   <table class="table table-list-search table-striped table-bordered" id="myTable">
     <thead>
       <tr>
+        <td><%= t.device_id %></td>
+        <td><%= t.description %></td>
+        <td><%= t.start_date %></td>
+        <td><%= t.get_time[:start_time] %></td>
+        <td><%= t.end_date %></td>
+        <td><%= t.get_time[:end_time] %></td>
+        <td id="status"><%= t.status %></td>
+        <td><%= link_to 'Edit', edit_task_path(t) %></td>
+        <td><%= link_to 'Delete', destroy_task_path(t), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <th>Device</th>
         <th>Description</th>
         <th>Start Date</th>
@@ -75,4 +84,27 @@
     </tbody>
   </table>
 
+<%= link_to 'New Task', new_user_task_path %>
+
+<script type="text/javascript">
+
+  function checkTime(){
+    <% @tasks.each do |t| %>
+      <% if t.status == 'Pending' %>
+        <% if (Time.now.strftime("%d:%m") == t.start_date.strftime("%d:%m")) %>
+          <% if (Time.now.strftime("%H:%M") == t.start_time.strftime("%H:%M")) %>
+            console.log('completed');
+            <% t.update(:status => 'Completed') %>
+          <% end %>
+        <% end %>
+      <% else %>
+      <% end %>
+    <% end %>
+    // t = setTimeout(function() {
+    //     checkTime()
+    // }, 10000);
+  }
+  checkTime();
+
+</script>
 <% end %>
