@@ -4,7 +4,7 @@ require 'fusioncharts-rails'
 class Dashboard < ApplicationRecord
 	after_initialize :graph, :graph_w
 	
-	def self.graph(consumption)
+	def self.graph
 
 		@chart = Fusioncharts::Chart.new({
 			type: 'line',
