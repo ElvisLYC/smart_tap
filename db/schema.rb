@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_14_033655) do
+ActiveRecord::Schema.define(version: 2018_10_15_104500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2018_10_14_033655) do
     t.bigint "subscription_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["subscription_id"], name: "index_devices_on_subscription_id"
     t.index ["user_id"], name: "index_devices_on_user_id"
   end
@@ -53,10 +54,18 @@ ActiveRecord::Schema.define(version: 2018_10_14_033655) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
+    t.date "start_date"
+    t.time "start_time"
+    t.date "end_date"
+    t.time "end_time"
+    t.string "name"
+
     t.datetime "start_date"
     t.datetime "start_time"
     t.datetime "end_date"
     t.datetime "end_time"
+
     t.index ["device_id"], name: "index_tasks_on_device_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end

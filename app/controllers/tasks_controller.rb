@@ -3,7 +3,9 @@ class TasksController < ApplicationController
   # before_action :set_task
 
   def index
-  	@tasks = Task.all
+  	# @tasks = Task.all
+		@devices = Device.where(user_id: current_user.id)
+		@tasks = Task.where(user_id: current_user.id)
   end
 
   def show
@@ -18,7 +20,10 @@ class TasksController < ApplicationController
 
     if @task.save
     	SshCommand.ssh_new(@task.id)
+			@task.get_device_id
+    	SshCommand.ssh_new
     	redirect_to user_tasks_path
+
     else
       redirect_back(fallback_location: root_url)
     end
@@ -26,6 +31,7 @@ class TasksController < ApplicationController
 
   def new
   	@task = Task.new
+		@devices = Device.where(user_id: current_user.id)
     render template: "tasks/new"
   end
 
@@ -62,6 +68,6 @@ class TasksController < ApplicationController
 
 
   def task_params
-    params.require(:task).permit(:device_id, :user_id, :description, :start_date, :start_time, :end_date, :end_time)
+    params.require(:task).permit(:device_id, :user_id, :description, :start_date, :start_time, :end_date, :end_time, :name)
   end
 end
