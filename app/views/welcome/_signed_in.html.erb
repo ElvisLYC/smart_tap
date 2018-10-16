@@ -15,6 +15,11 @@
   <!-- <button type="button" class="btn btn-primary"><i class="far fa-lightbulb fa-6x"></i><br>Control Applicances</button>   -->
 
   <img src="/assets/power-btn-grey.png" id="img-light" alt="light" onclick="toggleLight(this)" width="150px">Light
+
+  <%= link_to show_graph_path, class:"btn btn-success add" do %>
+  <button type="button" class="btn btn-primary"><i class="far fa-file fa-6x"></i><br>Energy Consumption Report</button>
+  <% end %>
+
   <br>
   <!-- <img src="/assets/power-btn-grey.png" id="img-light" alt="light" onclick="schedule(this)" width="150px">Light -->
 
@@ -25,6 +30,7 @@
       <br><i class="fas fa-book fa-2x"></i><br> My Tasks
     <% end %>
   </div>
+
 </div>
 
 <div class="button-group-2">

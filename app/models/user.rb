@@ -2,7 +2,9 @@ class User < ApplicationRecord
   include Clearance::User
   mount_uploader :avatar, AvatarUploader
   has_many :authentications, dependent: :destroy
-  has_many :subscriptions, dependent: :destroy
+
+  has_many :consumptions, dependent: :destroy
+
 
   def self.create_with_auth_and_hash(authentication, auth_hash)
     user = self.create!(

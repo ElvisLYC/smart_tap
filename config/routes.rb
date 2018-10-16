@@ -21,13 +21,15 @@ Rails.application.routes.draw do
 
   post '/users/:id' => "users#edit"
 
-
   get 'subscriptions/checkout'
   post 'subscriptions/checkout'
 
   # post "/users/:id/new_subscription" => "subscriptions#checkout"
 
   post '/users/:id/new_subscription' => "subscriptions#create", as: 'create_subs'
+
+
+  get '/report' => "dashboard#index", as: 'show_graph'
 
   # Schedule a new Task
   resources :users, controller: "users", only: [:create, :show, :update, :edit] do

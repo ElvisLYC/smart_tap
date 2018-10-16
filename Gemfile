@@ -91,6 +91,9 @@ gem 'sidekiq'
 gem 'rack-cors'
 
 
+gem 'fusioncharts-rails'
+
+
 gem 'toastr-rails'
 
 gem 'whenever', require: false
@@ -98,4 +101,5 @@ gem 'whenever', require: false
 gem 'net-ssh'
 gem 'omniauth'
 gem 'omniauth-facebook'
+
 
