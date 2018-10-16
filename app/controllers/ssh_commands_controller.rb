@@ -1,0 +1,3 @@
+class SshCommandsController < ApplicationController
+
+end

@@ -1,0 +1,51 @@
+
+<h3>
+  Your balance unit: <%= @total_device %>
+</h3>
+
+<!-- check with mentor -->
+<%= form_for(:device, :url => user_devices_path, :method => :post) do |f| %>
+<% if @device.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@device.errors.count, "error") %> prohibited
+    this device from being created:
+  </h2>
+  <ul>
+    <% @device.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="text-field">
+      <%= f.text_field :name, type: 'text', class: 'form-control-form', placeholder: 'What Device?'  %>
+  </div>
+
+  <div class="control">
+    <%= f.submit "Add Device", :class => 'button' %>
+  </div>
+
+<% end %>
+
+<table class="table table-list-search table-striped table-bordered" id="myTable">
+  <thead>
+    <tr>
+      <th>Device</th>
+      <th>Subscription ID</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @devices.each do |t| %>
+      <tr>
+        <td><%= t.name %></td>
+        <td><%= t.subscription_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', root_path %>
+<%= link_to 'Add Task', user_tasks_path %>
