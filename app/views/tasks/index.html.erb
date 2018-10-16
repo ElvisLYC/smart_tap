@@ -43,5 +43,36 @@
   <h3>Create new task with existing devices</h3>
 
   <%= render "/tasks/task_form" %>
+  
+  <table class="table table-list-search table-striped table-bordered" id="myTable">
+    <thead>
+      <tr>
+        <th>Device</th>
+        <th>Description</th>
+        <th>Start Date</th>
+        <th>Start Time</th>
+        <th>End Date</th>
+        <th>End Time</th>
+        <th>Status</th>
+        <th colspan="2">Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tasks.each do |t| %>
+        <tr>
+          <td><%= t.device_id %></td>
+          <td><%= t.description %></td>
+          <td><%= t.start_date %></td>
+          <td><%= t.get_time[:start_time] %></td>
+          <td><%= t.end_date %></td>
+          <td><%= t.get_time[:end_time] %></td>
+          <td><%= t.status %></td>
+          <td><%= link_to 'Edit', edit_task_path(t) %></td>
+          <td><%= link_to 'Delete', destroy_task_path(t), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 <% end %>

@@ -4,7 +4,8 @@ class TasksController < ApplicationController
 
   def index
   	# @tasks = Task.all
-		@devices = Device.all
+		@devices = Device.where(user_id: current_user.id)
+		@tasks = Task.where(user_id: current_user.id)
   end
 
   def show
@@ -17,10 +18,7 @@ class TasksController < ApplicationController
     @task.device_id = params[:device_id]
 
     if @task.save
-
 			@task.get_device_id
-      redirect_to user_tasks_path
-
     	SshCommand.ssh_new
     	redirect_to user_tasks_path
 
@@ -31,6 +29,7 @@ class TasksController < ApplicationController
 
   def new
   	@task = Task.new
+		@devices = Device.where(user_id: current_user.id)
     render template: "tasks/new"
   end
 
