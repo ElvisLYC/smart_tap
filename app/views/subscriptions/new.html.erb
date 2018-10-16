@@ -11,7 +11,7 @@
     <th></th>
   </tr>
   <tr>
-    <td>Price per device</td>
+    <td>Subscription Fee</td>
     <td>RM1,000</td>
   </tr>
   <tr>
@@ -31,8 +31,7 @@
 </table>
 
 
-  <p>Quantity: <span onchange= "myFunction()"><%= f.select :purchase_unit, options_for_select(Subscription.purchase_range), include_blank: true %></span> </p>
+  <p>Quantity: <span onchange= "myFunction()"><%= f.select :purchase_unit, options_for_select([1]), include_blank: false, value: 1 %></span> </p>
   <p id="total_sum"></p>
   <%= f.submit 'Subscribe' %>
 <% end -%>
-
