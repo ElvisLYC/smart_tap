@@ -2,7 +2,7 @@ require 'json'
 require 'fusioncharts-rails'
 
 class Dashboard < ApplicationRecord
-	after_initialize :graph, :graph_w
+	# after_initialize :graph, :graph_w, :graph_m
 	
 	def self.graph
 

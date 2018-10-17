@@ -21,7 +21,7 @@
 //= require fusioncharts/fusioncharts
 //= require fusioncharts/fusioncharts.charts
 //= require fusioncharts/themes/fusioncharts.theme.fusion
-//= require fusioncharts/themes/fusioncharts.theme.fint
+// = require fusioncharts/themes/fusioncharts.theme.fint
 
   url = "http://192.168.1.215/"
   time = setInterval(myTimer, 3000);
@@ -33,7 +33,6 @@
       if (window.location.href != "http://localhost:3000/"){
         myStopFunction()
       }
-
 
     if (window.location.href == "http://localhost:3002/"){
     state();
@@ -96,5 +95,6 @@
       return response.json()
     }).then(function(data){
       console.log(data)
+
     })
   }

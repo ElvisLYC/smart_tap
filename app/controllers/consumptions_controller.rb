@@ -4,7 +4,7 @@ class ConsumptionsController < ApplicationController
 		# when the light is on create a new power data
 		# if the device and user id is the same it will take the data instead of creating a new data
 		# and will just update the data when close
-		
+
 		@consumption = Consumption.new
 		@consumption.power = 0
 		@consumption.save
@@ -33,3 +33,6 @@ end
 			
 
 # 		else @consumption.save
+
+
+
