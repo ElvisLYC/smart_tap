@@ -101,5 +101,4 @@ gem 'whenever', require: false
 gem 'net-ssh'
 gem 'omniauth'
 gem 'omniauth-facebook'
-
-
+gem 'rails_12factor', group: :production
