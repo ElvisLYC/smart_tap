@@ -5,9 +5,9 @@
         <div class="field">
           <div class="inputs device col-4">
             <label for="">Device</label><br>
-            <select name="task[name]">
+            <select name="task[device_id]" id="task_device_id">
               <% @devices.each do |t| %>
-                <option name="task[name]"><%= t.name %></option>
+              <option value= "<%=t.id%>"><%=Device.find(t.id).name%></option>
               <% end %>
             </select>
           </div>

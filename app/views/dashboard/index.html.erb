@@ -1,5 +1,8 @@
-<h3><%= current_user.first_name %> household energy consumption chart</h3><br>
+<div class="container emp-profile">
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "consumptions" %>
 
+  <h3><%= current_user.first_name %> household energy consumption chart</h3><br>
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
@@ -35,3 +38,4 @@
   	<div id="chart-container-live"></div>
   </div>
 </div>
+

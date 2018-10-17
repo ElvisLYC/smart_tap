@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 h1{
-  color: white !important;
+  color: #00838f  !important;
 }
 
 h2{
@@ -12,14 +12,19 @@ h2{
 // .button-group-1{
 //   height: 20vw;
 // }
-div.button-group-1, div.button-group-2{
-  padding-left: 4vw !important;
+div.button-group-1{
+  padding-left: 8vw !important;
   padding-right: 2vw !important;
 }
 
-button.btn.btn-primary, button.btn.btn-success, a.btn.btn-success.add{
-  width: 30vw !important;
-  height: 15vw !important;
+div.button-group-2{
+  padding-left: 8vw !important;
+  padding-right: 2vw !important;
+}
+
+button.btn.btn-primary, button.btn.btn-success, a.btn.btn-success, a.btn.btn-primary, a.btn.btn-success.add{
+  width: 25vw !important;
+  height: 16vw !important;
 }
 
 

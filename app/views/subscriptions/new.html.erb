@@ -1,6 +1,6 @@
 
 <!-- include js -->
-<%= javascript_include_tag 'subscriptions', 'data-turbolinks-track': 'reload' %>
+<!-- <%= javascript_include_tag 'subscriptions', 'data-turbolinks-track': 'reload' %>
 
 <%= form_for @subscription, url: create_subs_path(current_user.id), method: :post, local: true do |f| %>
   <h3>SmartTap's Home Monitoring Device</h3>
@@ -11,7 +11,7 @@
     <th></th>
   </tr>
   <tr>
-    <td>Price per device</td>
+    <td>Subscription Fee</td>
     <td>RM1,000</td>
   </tr>
   <tr>
@@ -31,8 +31,58 @@
 </table>
 
 
-  <p>Quantity: <span onchange= "myFunction()"><%= f.select :purchase_unit, options_for_select(Subscription.purchase_range), include_blank: true %></span> </p>
+  <p>Quantity: <span onchange= "myFunction()"><%= f.select :purchase_unit, options_for_select([1]), include_blank: false, value: 1 %></span> </p>
+  <p id="total_sum"></p>
+  <%= f.submit 'Subscribe' %>
+<% end -%> -->
+
+
+<!-- include js -->
+
+<%= javascript_include_tag 'subscriptions', 'data-turbolinks-track': 'reload' %>
+
+<%= form_for @subscription, url: create_subs_path(current_user.id), method: :post, local: true do |f| %>
+
+<table id="tablePreview" class="table table-striped table-borderless">
+  <h3>SmartTAP's Home Monitoring Device</h3>
+<thread>
+  <p>Please play your order</p>
+</thread>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>ITEM</th>
+      <th>STATUS</th>
+
+    </tr>
+  </thead>
+
+
+    <tbody>
+  <tr>
+    <th scope="row">1</th>
+    <td>Price per device</td>
+    <td>RM1,000</td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Warranty</td>
+    <td>12 months</td>
+  </tr>
+  <tr>
+    <th scope="row">3</th>
+    <td>Specification</td>
+    <td>
+      <ul>
+        <li>plug and play easy installation</li>
+        <li>light weight</li>
+        <li>wifi connectivity</li>
+      </ul>
+    </td>
+  </tr>
+    </tbody>
+</table>
+  <p>Quantity: <span onchange= "myFunction()"><%= f.select :purchase_unit, options_for_select(Subscription.purchase_range), include_blank: false %></span> </p>
   <p id="total_sum"></p>
   <%= f.submit 'Subscribe' %>
 <% end -%>
-

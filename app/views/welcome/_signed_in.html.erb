@@ -1,123 +1,31 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Welcome <%= @full_name %></h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <p class="lead">Home Automation System</p>
   </div>
 </div>
-
 <div class="button-group-1">
 
-  <div class="button-group-2">
-    <%= link_to user_devices_path(current_user.id), class:"btn btn-primary" do %>
-      <br><i class="fas fa-book fa-2x"></i><br> Your Devices
-    <% end %>
-  </div>
-  <!-- <button type="button" class="btn btn-primary"><i class="far fa-lightbulb fa-6x"></i><br>Control Applicances</button>   -->
+      <%= link_to user_devices_path(current_user.id), class:"btn btn-primary" do %>
+        <br><i class="fas fa-book fa-8x"></i><br> Your Devices
+      <% end %>
 
-  <img src="/assets/power-btn-grey.png" id="img-light" alt="light" onclick="toggleLight(this)" width="150px">Light
+      <%= link_to show_graph_path, class:"btn btn-primary add" do %>
+      <i class="far fa-file fa-8x"></i><br>Energy Consumption Report
+      <% end %>
 
-  <%= link_to show_graph_path, class:"btn btn-success add" do %>
-  <button type="button" class="btn btn-primary"><i class="far fa-file fa-6x"></i><br>Energy Consumption Report</button>
-  <% end %>
-
-  <br>
-  <!-- <img src="/assets/power-btn-grey.png" id="img-light" alt="light" onclick="schedule(this)" width="150px">Light -->
-
-  <button type="button" class="btn btn-primary"><i class="far fa-file fa-6x"></i><br>Energy Consumption Report</button>
-
-  <div class="button-group-2">
-    <%= link_to user_tasks_path(current_user.id), class:"btn btn-success" do %>
-      <br><i class="fas fa-book fa-2x"></i><br> My Tasks
-    <% end %>
-  </div>
+      <%= link_to user_tasks_path(current_user.id), class:"btn btn-primary" do %>
+        <br><i class="fas fa-book fa-8x"></i><br> My Tasks
+      <% end %>
 
 </div>
+
+
 
 <div class="button-group-2">
   <%= link_to new_subscription_path(current_user.id), class:"btn btn-success add" do %>
-    <br><i class="fas fa-mobile-alt fa-6x"></i><br> Add a device
+    <br><i class="fas fa-mobile-alt fa-8x"></i><br> Add a device
   <% end %>
-  <button type="button" class="btn btn-success"><i class="fas fa-lock fa-6x"></i><br>Security Setting</button>
-  <button type="button" class="btn btn-success"><i class="fas fa-cog fa-6x"></i><br>Setting</button>
+  <button type="button" class="btn btn-success"><i class="fas fa-lock fa-8x"></i><br>Security Setting</button>
+  <button type="button" class="btn btn-success"><i class="fas fa-cog fa-8x"></i><br>Setting</button>
 </div>
-
-<script type="text/javascript">
-  url = "http://192.168.1.215/"
-  time = setInterval(myTimer, 3000);
-
-  function myTimer() {
-
-      state();
-      console.log(window.location.href)
-      if (window.location.href != "http://localhost:3000/"){
-        myStopFunction()
-      }
-
-
-    if (window.location.href == "http://localhost:3002/"){
-    state();
-    }else{
-      myStopFunction()
-    }     
-
-  }
-
-  function myStopFunction() {
-      clearInterval(time);
-  }
-
-  function state(){
-    fetch(url, {
-    // fetch('https://8fdf0043.ngrok.io/18/on', {
-    // headers: {'Access-Control-Allow-Origin': 'http://192.168.1.215' }
-    }).then(function(response){
-      return response.json()
-    }).then(function(data){
-      console.log(data)
-      lightState = data;
-      if (lightState == 1){
-      document.querySelector('#img-light').src = '/assets/power-btn-on.png';
-    }else if (lightState == 0){
-      document.querySelector('#img-light').src = '/assets/power-btn-off.png';
-    }
-    })
-  }
-
-  function toggleLight(e){
-    if (lightState == 1){
-      url2 = url+'18/off'
-      lightState = 0
-      document.querySelector('#img-light').src = '/assets/power-btn-off.png';
-    }else if (lightState == 0){
-      url2 = url+'18/on'
-      lightState = 1
-      document.querySelector('#img-light').src = '/assets/power-btn-on.png';
-    }
-    fetch(url2, {
-    // fetch('https://8fdf0043.ngrok.io/18/on', {
-      // headers: {'Access-Control-Allow-Origin': 'http://192.168.1.215' }
-    }).then(function(response){
-      return response.json()
-    }).then(function(data){
-      console.log(data)
-    })
-  }
-
-
-  function schedule(e){
-    // url = "http://192.168.1.215/1/*/*/*/*/*"
-    url3 = url+'1/*/*/*/*/*'
-     // e.preventDefault()
-    fetch(url3, {
-    // fetch('https://8fdf0043.ngrok.io/18/on', {
-      // headers: {'Access-Control-Allow-Origin': 'http://192.168.1.215' }
-    }).then(function(response){
-      return response.json()
-    }).then(function(data){
-      console.log(data)
-    })
-  }
-</script>
-
-</script>
-

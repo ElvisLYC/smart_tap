@@ -2,7 +2,7 @@ class DevicesController < ApplicationController
 
   def index
     @device = Device.new
-    @devices = Device.all
+    @devices = Device.where(user_id: current_user.id)
     @total_device = Subscription.where(user_id: current_user.id).sum(:balance_unit)
   end
 

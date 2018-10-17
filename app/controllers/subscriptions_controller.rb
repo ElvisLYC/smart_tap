@@ -45,6 +45,9 @@ class SubscriptionsController < ApplicationController
 	   )
 	  if result.success?
 			@subscription.paid
+			@device = Device.new(user_id: current_user.id)
+			@device.save
+			@device.update(name: "SmartTap #{@device.id}")
 			PaymentJob.perform_later(@total_cost, current_user)
 	    redirect_to :root, :flash => { :success => "Transaction successful!" }
 	  else

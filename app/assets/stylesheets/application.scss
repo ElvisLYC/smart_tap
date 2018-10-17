@@ -65,9 +65,18 @@ html,
 						 }
 				 }
 
+.video-intro{
+	padding: none;
+	margin:0
+}
 
-				 //TEST stylesheets
-				 body {
+.content-wrap{
+max-width: 950px;
+margin: 0 auto;
+padding: 50px;
+}
+//TEST stylesheets
+	body {
   color: #565a5c;
   background-color: #F8F8F8;
   font-family: "Varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -198,6 +207,8 @@ a {
   margin-bottom: 24px;
 }
 
+
+
 .description {
   color: #575757;
   font-size: 15px;
@@ -273,10 +284,21 @@ a {
 }
 
 body{
-	padding-top: 90px;
+	// padding-top: 3px;
+	margin-top:50px;
+
+
 
 }
 
-.avatar-full {
+.avatar-full{
   width: 100%;
+}
+
+.new_subscription{
+	// padding: 50px;
+	margin: 50px;
+}
+.emp-profile{
+	margin:50px;
 }
