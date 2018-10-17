@@ -9,6 +9,7 @@ function myFunction() {
 
 
 FusionCharts.ready(function() {
+
   var stockPriceChart = new FusionCharts({
       id: "stockRealTimeChart",
       type: 'realtimeline',
@@ -18,14 +19,14 @@ FusionCharts.ready(function() {
       dataFormat: 'json',
       dataSource: {
         "chart": {
-          "caption": "Real-time stock price monitorr",
-          "subCaption": "Harry's SuperMart",
+          "caption": "Real-time consumption monitor",
+          "subCaption": "Bob house",
           "xAxisName": "Time",
-          "yAxisName": "Stock Price",
-          "numberPrefix": "$",
-          "refreshinterval": "5",
-          "yaxisminvalue": "35",
-          "yaxismaxvalue": "36",
+          "yAxisName": "Consumption unit",
+          "numberPrefix": "kwh",
+          "refreshinterval": "3",
+          "yaxisminvalue": "0",
+          "yaxismaxvalue": "100",
           "numdisplaysets": "10",
           "labeldisplay": "rotate",
           "showRealTimeValue": "0",
@@ -38,7 +39,7 @@ FusionCharts.ready(function() {
         }],
         "dataset": [{
           "data": [{
-            "value": "35.27"
+            "value": "0"
           }]
         }]
       },
@@ -59,21 +60,23 @@ FusionCharts.ready(function() {
               addLeadingZero(currDate.getMinutes()) + ":" +
               addLeadingZero(currDate.getSeconds()),
               // Get random number between 35.25 & 35.75 - rounded to 2 decimal places
-              randomValue = Math.floor(Math.random() *
-                50) / 100 + 35.25,
+              // randomValue = Math.floor(Math.random() *
+              //   50),
+
+              randomValue = (Date.parse(new Date())-Date.parse("2018-10-16T17:59"))/1000,
+
               // Build Data String in format &label=...&value=...
               strData = "&label=" + label +
               "&value=" +
               randomValue;
             // Feed it to chart.
             chartRef.feedData(strData);
+
+            console.log(randomValue)
           }
 
           var myVar = setInterval(function() {
             updateData();
-          }, 5000);
+          }, 3000);
         }
       }
-    })
-    .render();
-});
