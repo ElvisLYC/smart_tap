@@ -50,7 +50,7 @@
 </thread>
   <thead>
     <tr>
-      <th>#</th>
+      <th>ID</th>
       <th>ITEM</th>
       <th>STATUS</th>
 
@@ -82,15 +82,7 @@
   </tr>
     </tbody>
 </table>
-
-
-
-
-
-
-
-
-  <p>Quantity: <span onchange= "myFunction()"><%= f.select :purchase_unit, options_for_select(Subscription.purchase_range), include_blank: true %></span> </p>
+  <p>Quantity: <span onchange= "myFunction()"><%= f.select :purchase_unit, options_for_select(Subscription.purchase_range), include_blank: false %></span> </p>
   <p id="total_sum"></p>
   <%= f.submit 'Subscribe' %>
 <% end -%>

@@ -1,34 +1,11 @@
+<%= javascript_include_tag "application" %>
 
 <div class="container emp-profile">
 <h3>
-  Your balance unit: <%= @total_device %>
+  Your have <%= @total_device %> devices
 </h3>
 
 <!-- check with mentor -->
-<%= form_for(:device, :url => user_devices_path, :method => :post) do |f| %>
-<% if @device.errors.any? %>
-<div id="error_explanation">
-  <h2>
-    <%= pluralize(@device.errors.count, "error") %> prohibited
-    this device from being created:
-  </h2>
-  <ul>
-    <% @device.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-
-  <div class="text-field">
-      <%= f.text_field :name, type: 'text', class: 'form-control-form', placeholder: 'What Device?'  %>
-  </div>
-
-  <div class="control">
-    <%= f.submit "Add Device", :class => 'button' %>
-  </div>
-
-<% end %>
 
 <table class="table table-list-search table-striped table-bordered" id="myTable">
   <thead>
@@ -36,6 +13,7 @@
       <th>ID</th>
       <th>Device</th>
       <th>Setting</th>
+      <th>Action</th>
     </tr>
   </thead>
 
@@ -46,6 +24,9 @@
         <td><%= t.name %></td>
         <td>
           <%= link_to 'Add Task', user_tasks_path %>
+        </td>
+        <td>
+          <img src="/assets/power-btn-grey.png" id="img-light" alt="light" onclick="toggleLight(this)" width="150px">
         </td>
       </tr>
     <% end %>

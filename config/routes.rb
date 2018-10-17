@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     resources :tasks
     resources :devices
   end
-  post '/users/:id/task/new' => "tasks#create", as: 'create_task'
+  # post '/users/:id/task/new' => "tasks#create", as: 'create_task'
   delete '/users/:id/task/:id/delete' => "tasks#destroy", as: 'destroy_task'
   get '/users/:id/task/:id/edit' => "tasks#edit", as: 'edit_task'
   post '/users/:id/task/:id/update' => "tasks#update", as: 'update_task'
