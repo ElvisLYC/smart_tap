@@ -1,11 +1,13 @@
+<div class="container emp-profile">
 <h5>Kindly proceed to make payment as per details below:-</h5>
 <h5>Purchase Unit: <%= @subscription.purchase_unit %> units </h5>
 <h5>Total Due: RM<%= @total_cost %> </h5>
 <%= stylesheet_link_tag 'subscriptions' %>
 <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    <button type="button" class="btn btn-normal" data-toggle="modal" data-target="#exampleModalCenter">
       Pay now
     </button>
+  </div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
