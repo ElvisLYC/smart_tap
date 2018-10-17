@@ -35,40 +35,37 @@
 // 	color: purple;
 // }
 html,
-	 body,
-	 header,
-	 .view {
-		 height: 100%;
-	 }
+    body,
+    header,
+    .view {
+      height: 100%;
+    }
 
-	 @media (max-width: 740px) {
-		 html,
-		 body,
-		 header,
-		 .view {
-			 height: 1050px;
-		 }
-	 }
+    @media (max-width: 740px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 1050px;
+      }
+    }
 
-	 @media (min-width: 800px) and (max-width: 850px) {
-		 html,
-		 body,
-		 header,
-		 .view {
-			 height: 700px;
-		 }
-	 }
+    @media (min-width: 800px) and (max-width: 850px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 700px;
+      }
+    }
 
-	 @media (min-width: 800px) and (max-width: 850px) {
-						 .navbar:not(.top-nav-collapse) {
-								 background: #1C2331!important;
-						 }
-				 }
+    @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
 
-.video-intro{
-	padding: none;
-	margin:0
-}
+
 
 .content-wrap{
 max-width: 950px;
