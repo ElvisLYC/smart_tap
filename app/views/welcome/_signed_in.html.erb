@@ -6,24 +6,66 @@
   </div>
 </div>
 <div class="button-group-1">
-      <%= link_to user_devices_path(current_user.id), class:"btn btn-primary" do %>
-        <br><i class="fas fa-book fa-8x"></i><br> Your Devices
-      <% end %>
 
-      <%= link_to show_graph_path, class:"btn btn-primary add" do %>
-      <i class="far fa-file fa-8x"></i><br>Energy Consumption Report
-      <% end %>
+  <div class="container">
 
-      <%= link_to user_tasks_path(current_user.id), class:"btn btn-primary" do %>
-        <br><i class="fas fa-book fa-8x"></i><br> My Tasks
-      <% end %>
+    <div class="row">
+	    	<aside class="col-sm-4">
+                <p>Your Device </p>
 
+<div class="card-banner  overlay-grad" style="height:250px; background-image: url('http://bootstrap-ecommerce.com/main/images/posts/1.jpg');">
+  <div class="card-body text-white">
+    <%= link_to user_devices_path(current_user.id), class:"btn btn-warning btn-sm" do %>
+   View More
+    <% end %>
+
+
+
+    <h5 class="card-title">Check</h5>
+    <p class="card-text">List of your device</p>
+  </div>
+</div> <!-- card.// -->
+
+            </aside>
+            <aside class="col-sm-4">
+         <p>My Task </p>
+<div class="card-banner" style="height:250px; background-image: url('http://bootstrap-ecommerce.com/main/images/posts/2.jpg');">
+  <article class="overlay overlay-cover d-flex align-items-center justify-content-center">
+    <div class="text-center">
+    	<h5 class="card-title">Monitor your device activity</h5>
+
+
+      <%= link_to user_tasks_path(current_user.id), class:"btn btn-warning btn-sm" do %>
+        view more
+      <% end %>
+    </div>
+  </article>
+</div> <!-- card.// -->
+
+            </aside>
+            <aside class="col-sm-4">
+<p>Energy Consumption Report </p>
+<div class="card-banner align-items-end" style="height:250px; background-image: url('http://bootstrap-ecommerce.com/main/images/posts/5.jpg');">
+	<article class="overlay m-4 w-100">
+    	<h5 class="card-title">Analytic and report</h5>
+
+      <%= link_to show_graph_path, class:"btn btn-warning btn-sm" do %>
+        View More
+      <% end %>
+    </article>
+</div> <!-- card.// -->
+
+            </aside>
+	</div>
 </div>
 
 
-
-<div class="button-group-2">
-  <%= link_to new_subscription_path(current_user.id), class:"btn btn-success add" do %>
-    <br><i class="fas fa-mobile-alt fa-8x"></i><br> Add a device
-  <% end %>
+<br><br>
+<hr>
+<div class="card-body text-center">
+<h3 class="text-babu">Add Device </h3>
+<p class="text-babu"> Add more feature and functions</p>   <br>
+<p><a href="#"> <%= link_to new_subscription_path(current_user.id), class:"btn btn-warning" do %>
+    Add Devices
+ <% end %></a>
 </div>
