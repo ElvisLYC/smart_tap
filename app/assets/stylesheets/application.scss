@@ -299,3 +299,31 @@ body{
 .emp-profile{
 	margin:50px;
 }
+
+//profile-img
+
+.content-wrap2 {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 50px;
+  overflow: hidden;
+}
+
+.column-narrow {
+  width: 35%;
+  float: left;
+  padding-right: 3%;
+  min-height: 175px;
+}
+.column-wide {
+  width: 62%;
+  float: left;
+  min-height: 175px;
+}
+
+.profile-img {
+  /*width: 300px;*/
+  border-radius: 50%;
+  /*float: left;*/
+  /*margin-right: 30px;*/
+}
