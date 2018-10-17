@@ -11,6 +11,17 @@ div#navbarsExampleDefault.collapse.navbar-collapse{
   right: 1vw;
 }
 
+ul.dropdown-menu.show{
+  left: -80px;
+  padding: 20px;
+  text-align: center;
+  background-color: lightgrey;
+}
+
+nav.navbar{
+  // background-color: darkgrey !important
+}
+
 /*========================================================================
                 LOGIN/SIGNUP MODALS
  =========================================================================*/
