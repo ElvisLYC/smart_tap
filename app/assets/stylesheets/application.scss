@@ -129,7 +129,7 @@ a {
   color: #fff;
 }
 
-.btn.btn-default {
+/*.btn.btn-default {
   width: 100%;
   border-color: #c4c4c4;
   background: white;
@@ -138,7 +138,7 @@ a {
   padding: 10px 0;
   margin-top: 10px;
 }
-
+*/
 .btn.btn-normal {
   border: 1px solid #ff5a5f;
   background-color: #ff5a5f;
@@ -297,6 +297,11 @@ body{
 	margin:50px;
 }
 
+
+.toggle-group{
+  width: 10%;
+}
+
 //profile-img
 
 .content-wrap2 {
@@ -396,3 +401,4 @@ p.session-form-title{
 .at-login-form{
 
 }
+
