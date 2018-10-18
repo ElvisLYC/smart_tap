@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag 'dashboard' %>
+
+<div class="graph d-flex flex-column">
+  <div class="p-2">
+  	<div id="chart-container">
+  		<%= Dashboard.graph %>
+  	</div>
+  </div>
+  <div class="p-2">
+  	<div id="chart-container-weekly">
+  		<%= Dashboard.graph_w %>
+  	</div>
+  </div>
+  <div class="p-2">
+  	<div id="chart-container-monthly">
+  		<%= Dashboard.graph_m %>
+  	</div>
+  </div>
+  <a href="/report" class="btn btn-normal size" tabindex="-1" role="button" aria-disabled="true">Back</a>
+</div>
+

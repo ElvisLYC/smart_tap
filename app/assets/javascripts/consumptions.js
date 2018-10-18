@@ -78,5 +78,8 @@ FusionCharts.ready(function() {
           var myVar = setInterval(function() {
             updateData();
           }, 3000);
-        }
-      }
+     }
+           }
+         })
+         .render();
+     });

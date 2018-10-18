@@ -8,4 +8,8 @@ class DashboardController < ApplicationController
 		@graph_m
 		@graph_l
 	end
+
+	def show
+		
+	end
 end
