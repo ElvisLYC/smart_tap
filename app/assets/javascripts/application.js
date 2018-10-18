@@ -19,7 +19,7 @@
 //= require bootstrap
 //= require mdb
 
-
+//= require jquery_ujs
 //= require fusioncharts/fusioncharts
 //= require fusioncharts/fusioncharts.charts
 //= require fusioncharts/themes/fusioncharts.theme.fusion
