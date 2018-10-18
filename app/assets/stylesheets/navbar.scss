@@ -19,7 +19,7 @@ ul.dropdown-menu.show{
 }
 
 nav.navbar{
-  background-color: teal !important;
+  background-color: #121d1d;
   color: white !important;
 }
 
@@ -215,4 +215,21 @@ a.nav-link, a.navbar-brand{
   button.btn-gst{
     color:green !important;
   }
+}
+
+.footer-copywright2{
+  overflow: hidden;
+height: 44px;
+line-height: 50px;
+color: rgba(255, 255, 255, 0.8);
+background-color: #00838f;
+text-align: center;
+}
+
+.page-footer2{
+
+    margin-top: 20px;
+    padding-top: 20px;
+    background-color: #3E4551;
+    color: #fff;
 }
