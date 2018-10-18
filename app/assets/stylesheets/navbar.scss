@@ -7,8 +7,24 @@
 }
 
 div#navbarsExampleDefault.collapse.navbar-collapse{
-  position: fixed;
+  position: absolute;
   right: 1vw;
+}
+
+ul.dropdown-menu.show{
+  left: -80px;
+  padding: 20px;
+  text-align: center;
+  background-color: lightgrey;
+}
+
+nav.navbar{
+  background-color: teal !important;
+  color: white !important;
+}
+
+a.nav-link, a.navbar-brand{
+  color: white !important;
 }
 
 /*========================================================================
@@ -191,5 +207,12 @@ div#navbarsExampleDefault.collapse.navbar-collapse{
   .modal-header {
     padding: 20px 20px;
     border-bottom: 0px solid #e5e5e5;
+  }
+  p.ta-l{
+    width: 30vw;
+    left: -300px!important;
+  }
+  button.btn-gst{
+    color:green !important;
   }
 }

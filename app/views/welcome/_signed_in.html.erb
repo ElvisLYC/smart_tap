@@ -1,11 +1,11 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
+    <br>
     <h1 class="display-4">Welcome <%= @full_name %></h1>
     <p class="lead">Home Automation System</p>
   </div>
 </div>
 <div class="button-group-1">
-
       <%= link_to user_devices_path(current_user.id), class:"btn btn-primary" do %>
         <br><i class="fas fa-book fa-8x"></i><br> Your Devices
       <% end %>
