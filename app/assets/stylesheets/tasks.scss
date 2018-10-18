@@ -3,7 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #model-b {
-	width: 10% !important;
+	width: 5% !important;
+	height: 5% !important;
+}
+
+#model-t {
+	width: 8% !important;
 	height: 5% !important;
 }
 
@@ -13,4 +18,9 @@
 
 #task_end_time {
 	width: 168% !important;
+}
+
+.table {
+	margin-top: 25px;
+
 }

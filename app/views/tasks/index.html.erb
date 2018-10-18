@@ -37,9 +37,10 @@
   </table>
 
   <br>
-<a href="/users/<%= current_user.id %>/devices" class="btn btn-normal px-3 tabindex="-1" role="button" aria-disabled="true">Back</a>
+  <%= link_to 'Back', user_devices_path, :class => "btn btn-primary", :id => "model-b" %>
+
   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="model-b">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="model-t">
   New Task
 </button>
 
