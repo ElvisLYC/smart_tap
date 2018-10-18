@@ -1,12 +1,13 @@
 <div class="container emp-profile">
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "consumptions" %>
+  <%= stylesheet_link_tag 'dashboard' %>
 
   <h3><%= current_user.first_name %> household energy consumption chart</h3><br>
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Daily</a>
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Live</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
@@ -14,3 +15,9 @@
   	<div id="chart-container-live"></div>
   </div>
 </div>
+
+
+<a href="/report/detail" class="btn btn-normal" tabindex="-1" role="button" aria-disabled="true">Graph</a>
+<a href="/" class="btn btn-normal" tabindex="-1" role="button" aria-disabled="true">Back</a>
+
+

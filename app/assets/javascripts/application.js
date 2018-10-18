@@ -30,15 +30,14 @@ url = "http://192.168.1.215/"
 time = setInterval(myTimer, 3000);
 
 function myTimer() {
-
-    state();
-    console.log(window.location.href)
-    if (window.location.href != "http://localhost:3000/"){
-      myStopFunction()
-    }
-
-  if (window.location.href == "http://localhost:3002/"){
   state();
+  console.log(window.location.href)
+  if (window.location.href != "http://localhost:3000/"){
+    myStopFunction()
+  }
+
+  if (window.location.href == "http://localhost:3000"){
+    state();
   }else{
     myStopFunction()
   }
@@ -90,17 +89,17 @@ function toggleLight(e){
 }
 
 
-function schedule(e){
-  // url = "http://192.168.1.215/1/*/*/*/*/*"
-  url3 = url+'1/*/*/*/*/*'
-   // e.preventDefault()
-  fetch(url3, {
-  // fetch('https://8fdf0043.ngrok.io/18/on', {
-    // headers: {'Access-Control-Allow-Origin': 'http://192.168.1.215' }
-  }).then(function(response){
-    return response.json()
-  }).then(function(data){
-    console.log(data)
+// function schedule(e){
+//   // url = "http://192.168.1.215/1/*/*/*/*/*"
+//   url3 = url+'1/*/*/*/*/*'
+//    // e.preventDefault()
+//   fetch(url3, {
+//   // fetch('https://8fdf0043.ngrok.io/18/on', {
+//     // headers: {'Access-Control-Allow-Origin': 'http://192.168.1.215' }
+//   }).then(function(response){
+//     return response.json()
+//   }).then(function(data){
+//     console.log(data)
 
-  })
-}
+//   })
+// }

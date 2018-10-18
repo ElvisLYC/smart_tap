@@ -43,6 +43,9 @@ Rails.application.routes.draw do
 
   get '/report' => "dashboard#index", as: 'show_graph'
 
+  get '/report/detail' => "dashboard#show", as: 'show_graph_2'
+
+
   # Schedule a new Task
   resources :users, controller: "users", only: [:create, :show, :update, :edit] do
     resources :tasks
