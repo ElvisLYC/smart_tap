@@ -63,7 +63,7 @@ FusionCharts.ready(function() {
               // randomValue = Math.floor(Math.random() *
               //   50),
 
-              randomValue = (Date.parse(new Date())-Date.parse("2018-10-16T17:59"))/1000,
+              randomValue = (Date.parse(new Date())-Date.parse("2018-10-18T17:59"))/1000,
 
               // Build Data String in format &label=...&value=...
               strData = "&label=" + label +
