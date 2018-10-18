@@ -14,7 +14,6 @@
         <th>Start Time</th>
         <th>End Date</th>
         <th>End Time</th>
-        <th>Status</th>
         <th colspan="2">Action</th>
       </tr>
     </thead>
@@ -28,7 +27,6 @@
           <td><%= t.get_time[:start_time] %></td>
           <td><%= t.end_date %></td>
           <td><%= t.get_time[:end_time] %></td>
-          <td><%= t.status %></td>
           <td><%= link_to 'Edit', edit_task_path(t) %></td>
           <td><%= link_to 'Delete', destroy_task_path(t), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
