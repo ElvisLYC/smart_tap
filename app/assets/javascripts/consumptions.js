@@ -23,7 +23,7 @@ FusionCharts.ready(function() {
           "subCaption": "Bob house",
           "xAxisName": "Time",
           "yAxisName": "Consumption unit",
-          "numberPrefix": "kwh",
+          "numberPrefix": "W",
           "refreshinterval": "3",
           "yaxisminvalue": "0",
           "yaxismaxvalue": "100",
@@ -63,7 +63,7 @@ FusionCharts.ready(function() {
               // randomValue = Math.floor(Math.random() *
               //   50),
 
-              randomValue = (Date.parse(new Date())-Date.parse("2018-10-18T17:59"))/1000,
+              randomValue = (Date.parse(new Date())-Date.parse("2018-10-19T11:59"))/10000,
 
               // Build Data String in format &label=...&value=...
               strData = "&label=" + label +
